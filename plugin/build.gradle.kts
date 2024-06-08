@@ -11,6 +11,7 @@ plugins {
 
     // Apply the Kotlin JVM plugin to add support for Kotlin.
     alias(libs.plugins.jvm)
+    alias(libs.plugins.sonar)
 }
 
 repositories {
@@ -34,8 +35,9 @@ gradlePlugin {
 }
 
 // Add a source set for the functional test suite
-val functionalTestSourceSet = sourceSets.create("functionalTest") {
-}
+val functionalTestSourceSet =
+    sourceSets.create("functionalTest") {
+    }
 
 configurations["functionalTestImplementation"].extendsFrom(configurations["testImplementation"])
 configurations["functionalTestRuntimeOnly"].extendsFrom(configurations["testRuntimeOnly"])
@@ -57,4 +59,12 @@ tasks.named<Task>("check") {
 tasks.named<Test>("test") {
     // Use JUnit Jupiter for unit tests.
     useJUnitPlatform()
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "tacascer-org_gradle-monorepo-plugin")
+        property("sonar.organization", "tacascer-org")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
