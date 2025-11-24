@@ -3,4 +3,4 @@
 
 [plugins]
 jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.21" }
-sonar = { id = "org.sonarqube", version = "7.0.0.6105" }
+sonar = { id = "org.sonarqube", version = "7.1.0.6387" }
