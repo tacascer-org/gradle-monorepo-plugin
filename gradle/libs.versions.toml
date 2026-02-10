@@ -2,5 +2,5 @@
 # https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
 
 [plugins]
-jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.2.21" }
+jvm = { id = "org.jetbrains.kotlin.jvm", version = "2.3.10" }
 sonar = { id = "org.sonarqube", version = "7.2.1.6560" }
